@@ -47,8 +47,16 @@
 	margin: 40px;  
 }
 
+.mina {
+	text-align: center;
+	color: #274251;
+	font-weight: 100;
+	font-size: 300%;
+	
+}
+
 body {
-	background-image: url(webback.png);
+	/*background-image: url(webback.png);*/
 	/*background-image: url(5766.jpg);*/
 	background-repeat: no-repeat;
 	/*background-position: 100% 900%;*/
@@ -56,5 +64,13 @@ body {
 	background-size: 500px; 
 	background-color: red; 
 	
+}
 
+#camp_image{
+	height: 600px;
+	 
+	margin-right: auto;
+	margin-left: auto;  
+	padding: 0px;	
+	display: block;
 }
