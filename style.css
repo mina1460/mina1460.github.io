@@ -1,0 +1,60 @@
+*{
+	margin: 0; 
+	padding: 0;
+}
+
+#nav-bar {
+	position: sticky;
+	top: 0;
+	z-index: 10;	
+}
+
+.navbar-brand img
+{
+	height: 80px;
+	padding-left: 20px;  
+}
+
+.navbar-nav li {
+	padding: 0 10px; 
+}
+
+.navbar-nav li a{
+	float: right;
+	text-align: left;
+}
+
+#nav-bar ul li a:hover{
+	color: #ad00ac; 
+}
+
+.navbar {
+	background: #fff;
+}
+.navbar-toggler {
+	border: none!important;
+}
+
+.nav-link{
+	font-weight: 600; 
+	font-size: 16px; 
+}
+
+#inspired {
+	font-size: 32px; 
+	text-align: center;
+	padding-top: 40px; 
+	margin: 40px;  
+}
+
+body {
+	background-image: url(webback.png);
+	/*background-image: url(5766.jpg);*/
+	background-repeat: no-repeat;
+	/*background-position: 100% 900%;*/
+	background-position: right bottom;
+	background-size: 500px; 
+	background-color: red; 
+	
+
+}
