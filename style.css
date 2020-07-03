@@ -67,6 +67,10 @@ body {
 	background-color: red; 
 }
 
+#Searchbox{
+	color: red; 
+}
+
 #camp_image{
 	height: 600px; 
 	margin-right: auto;
@@ -74,4 +78,5 @@ body {
 	padding: 0px;	
 	display: block;
 }
+
 
