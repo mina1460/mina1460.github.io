@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:700');
+
 *{
 	margin: 0; 
 	padding: 0;
@@ -47,6 +49,8 @@
 	margin: 40px;  
 }
 
+
+
 .mina {
 	text-align: center;
 	color: #274251;
@@ -56,21 +60,18 @@
 }
 
 body {
-	/*background-image: url(webback.png);*/
-	/*background-image: url(5766.jpg);*/
+
 	background-repeat: no-repeat;
-	/*background-position: 100% 900%;*/
 	background-position: right bottom;
 	background-size: 500px; 
 	background-color: red; 
-	
 }
 
 #camp_image{
-	height: 600px;
-	 
+	height: 600px; 
 	margin-right: auto;
 	margin-left: auto;  
 	padding: 0px;	
 	display: block;
 }
+
