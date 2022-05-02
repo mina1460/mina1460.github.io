@@ -3,7 +3,31 @@
         <title>Tags - Tag - Mina Ashraf&#39;s Blog</title>
         <link>http://minaashraf.me/tags/</link>
         <description>Tags - Tag - Mina Ashraf&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 17 Apr 2022 12:45:41 &#43;0200</lastBuildDate><atom:link href="http://minaashraf.me/tags/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 02 May 2022 17:05:48 &#43;0200</lastBuildDate><atom:link href="http://minaashraf.me/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>ANN</title>
+    <link>http://minaashraf.me/tags/ann/</link>
+    <pubDate>Mon, 02 May 2022 17:05:48 &#43;0200</pubDate>
+    <author>Author</author>
+    <guid>http://minaashraf.me/tags/ann/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>datascience</title>
+    <link>http://minaashraf.me/tags/datascience/</link>
+    <pubDate>Mon, 02 May 2022 17:05:48 &#43;0200</pubDate>
+    <author>Author</author>
+    <guid>http://minaashraf.me/tags/datascience/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>KNN</title>
+    <link>http://minaashraf.me/tags/knn/</link>
+    <pubDate>Mon, 02 May 2022 17:05:48 &#43;0200</pubDate>
+    <author>Author</author>
+    <guid>http://minaashraf.me/tags/knn/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>regola</title>
     <link>http://minaashraf.me/tags/regola/</link>
     <pubDate>Sun, 17 Apr 2022 12:45:41 &#43;0200</pubDate>

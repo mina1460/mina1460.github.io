@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Approximate_nearest_neighbor - Mina Ashraf&#39;s Blog</title><meta name="Description" content=""><meta property="og:title" content="Approximate_nearest_neighbor" />
+<meta property="og:description" content="Approximate Nearest Neighbors problem with KNNs Finding the nearest neighbors in your data can be a very useful exercise in hundreds of applications. You will always find KNN models making their way into your solution in one way or another. They are used in recommendation engines, anomaly detection, classification of semantically similar documents, etc, but they have a serious problem, which is scalability.
+KNN models are lazy non-parametric models, which means that when you do the famous model." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://minaashraf.me/posts/approximate_nearest_neighbor/" />
+<meta property="article:published_time" content="2022-05-02T17:05:48+02:00" />
+<meta property="article:modified_time" content="2022-05-02T17:05:48+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Approximate_nearest_neighbor"/>
+<meta name="twitter:description" content="Approximate Nearest Neighbors problem with KNNs Finding the nearest neighbors in your data can be a very useful exercise in hundreds of applications. You will always find KNN models making their way into your solution in one way or another. They are used in recommendation engines, anomaly detection, classification of semantically similar documents, etc, but they have a serious problem, which is scalability.
+KNN models are lazy non-parametric models, which means that when you do the famous model."/>
+<meta name="application-name" content="Mina Ashraf&#39;s Blog">
+<meta name="apple-mobile-web-app-title" content="Mina Ashraf&#39;s Blog"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://minaashraf.me/posts/approximate_nearest_neighbor/" /><link rel="prev" href="http://minaashraf.me/posts/first_post/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Approximate_nearest_neighbor",
+        "inLanguage": "en-us",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/minaashraf.me\/posts\/approximate_nearest_neighbor\/"
+        },"genre": "posts","keywords": "datascience, KNN, ANN","wordcount":  574 ,
+        "url": "http:\/\/minaashraf.me\/posts\/approximate_nearest_neighbor\/","datePublished": "2022-05-02T17:05:48+02:00","dateModified": "2022-05-02T17:05:48+02:00","publisher": {
+            "@type": "Organization",
+            "name": "Author"},"author": {
+                "@type": "Person",
+                "name": "Author"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Mina Ashraf&#39;s Blog">Mina Ashraf&#39;s Blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Mina Ashraf&#39;s Blog">Mina Ashraf&#39;s Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Approximate_nearest_neighbor</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Author</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-05-02">2022-05-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;574 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#problem-with-knns">problem with KNNs</a></li>
+    <li><a href="#solution-">Solution ?</a></li>
+    <li><a href="#how-does-it-work">How does it work?</a></li>
+    <li><a href="#sources">Sources</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="approximate-nearest-neighbors">Approximate Nearest Neighbors</h1>
+<h2 id="problem-with-knns">problem with KNNs</h2>
+<p>Finding the nearest neighbors in your data can be a very useful exercise in hundreds of applications. You will always find KNN models making their way into your solution in one way or another. They are used in recommendation engines, anomaly detection, classification of semantically similar documents, etc, but they have a serious problem, which is scalability.</p>
+<p>KNN models are lazy non-parametric models, which means that when you do the famous model.fit(), they don’t actually learn anything, they just store a reference for the training data that they will use in doing the search.
+So far so good, but why is scalability an issue here? Simply because the algorithmic complexity of running a single query is Linear, O(N). Thus, if you have N users for whom you want to find their nearest neighbors, the complexity will be quadratic, which is not really an option in the big data era. Note that we assumed that the distance measure you are using is running in constant time O(1), which is rarely the case with high-dimensional data.</p>
+<p>To make sure you understand the last part, let’s say that you are using cosine similarity to measure the distance between two items in a dataset, and if each item is represented as a high dimensional vector of (100+ entries), you will compute the dot product between each pair of vectors each time, which adds another layer of complexity.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://media-exp1.licdn.com/dms/image/C4D12AQHnPa6XJwklBw/article-inline_image-shrink_1500_2232/0/1651434418634?e=2147483647&amp;v=beta&amp;t=ghc0xBSuoR2RESJpSzOCekgov_y2pr8spWrLS-JnMQA"
+        data-srcset="https://media-exp1.licdn.com/dms/image/C4D12AQHnPa6XJwklBw/article-inline_image-shrink_1500_2232/0/1651434418634?e=2147483647&amp;v=beta&amp;t=ghc0xBSuoR2RESJpSzOCekgov_y2pr8spWrLS-JnMQA, https://media-exp1.licdn.com/dms/image/C4D12AQHnPa6XJwklBw/article-inline_image-shrink_1500_2232/0/1651434418634?e=2147483647&amp;v=beta&amp;t=ghc0xBSuoR2RESJpSzOCekgov_y2pr8spWrLS-JnMQA 1.5x, https://media-exp1.licdn.com/dms/image/C4D12AQHnPa6XJwklBw/article-inline_image-shrink_1500_2232/0/1651434418634?e=2147483647&amp;v=beta&amp;t=ghc0xBSuoR2RESJpSzOCekgov_y2pr8spWrLS-JnMQA 2x"
+        data-sizes="auto"
+        alt="https://media-exp1.licdn.com/dms/image/C4D12AQHnPa6XJwklBw/article-inline_image-shrink_1500_2232/0/1651434418634?e=2147483647&amp;v=beta&amp;t=ghc0xBSuoR2RESJpSzOCekgov_y2pr8spWrLS-JnMQA"
+        title="cosine similarity" /></p>
+<p>Imagine Youtube running this algorithm for their 2.6 billion active users, and then wait for a few years until you get 1 recommendation that you may or may not like 😈.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://media-exp1.licdn.com/dms/image/C4D12AQHDT4U5yhz4EQ/article-inline_image-shrink_1500_2232/0/1651434573950?e=2147483647&amp;v=beta&amp;t=OOX_zNPghGAKim-Du0-At2jjRPV3vziY7FT0sQdLprs"
+        data-srcset="https://media-exp1.licdn.com/dms/image/C4D12AQHDT4U5yhz4EQ/article-inline_image-shrink_1500_2232/0/1651434573950?e=2147483647&amp;v=beta&amp;t=OOX_zNPghGAKim-Du0-At2jjRPV3vziY7FT0sQdLprs, https://media-exp1.licdn.com/dms/image/C4D12AQHDT4U5yhz4EQ/article-inline_image-shrink_1500_2232/0/1651434573950?e=2147483647&amp;v=beta&amp;t=OOX_zNPghGAKim-Du0-At2jjRPV3vziY7FT0sQdLprs 1.5x, https://media-exp1.licdn.com/dms/image/C4D12AQHDT4U5yhz4EQ/article-inline_image-shrink_1500_2232/0/1651434573950?e=2147483647&amp;v=beta&amp;t=OOX_zNPghGAKim-Du0-At2jjRPV3vziY7FT0sQdLprs 2x"
+        data-sizes="auto"
+        alt="https://media-exp1.licdn.com/dms/image/C4D12AQHDT4U5yhz4EQ/article-inline_image-shrink_1500_2232/0/1651434573950?e=2147483647&amp;v=beta&amp;t=OOX_zNPghGAKim-Du0-At2jjRPV3vziY7FT0sQdLprs"
+        title="84" /></p>
+<h2 id="solution-">Solution ?</h2>
+<p>I think you now understand why it is usually a bad idea to use KNN in production systems, but surely there should be a solution to this, right? Yes, here is where we use the approximate nearest neighbors search (ANN), which can execute a single query in O(log N) complexity. This is a HUUUUGE difference, even if it sacrifices the accuracy a little bit. KNN was not really an option to consider. There are a couple of implementations for ANN, including Facebook’s PySparseNN (for sparse interaction matrices), annoy (Approximate nearest neighbor, Oh YEAH) by Spotify, etc.</p>
+<p>here is a visualization for how Annoy works.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://media-exp1.licdn.com/dms/image/C4D12AQH27SvTXzNxvg/article-inline_image-shrink_1500_2232/0/1651434527947?e=2147483647&amp;v=beta&amp;t=sSZCZO1GLuEWcvXbOkfLRK376-wU-IOORxkRCw-tsW4"
+        data-srcset="https://media-exp1.licdn.com/dms/image/C4D12AQH27SvTXzNxvg/article-inline_image-shrink_1500_2232/0/1651434527947?e=2147483647&amp;v=beta&amp;t=sSZCZO1GLuEWcvXbOkfLRK376-wU-IOORxkRCw-tsW4, https://media-exp1.licdn.com/dms/image/C4D12AQH27SvTXzNxvg/article-inline_image-shrink_1500_2232/0/1651434527947?e=2147483647&amp;v=beta&amp;t=sSZCZO1GLuEWcvXbOkfLRK376-wU-IOORxkRCw-tsW4 1.5x, https://media-exp1.licdn.com/dms/image/C4D12AQH27SvTXzNxvg/article-inline_image-shrink_1500_2232/0/1651434527947?e=2147483647&amp;v=beta&amp;t=sSZCZO1GLuEWcvXbOkfLRK376-wU-IOORxkRCw-tsW4 2x"
+        data-sizes="auto"
+        alt="https://media-exp1.licdn.com/dms/image/C4D12AQH27SvTXzNxvg/article-inline_image-shrink_1500_2232/0/1651434527947?e=2147483647&amp;v=beta&amp;t=sSZCZO1GLuEWcvXbOkfLRK376-wU-IOORxkRCw-tsW4"
+        title="img" /></p>
+<h2 id="how-does-it-work">How does it work?</h2>
+<p>The idea is very simple, you pick two points from your data randomly, and find a hyperplane that is equidistant between the two points to split the data. Then find two other points, and repeat, until you end up with a division that has “K” number of points, then you stop.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://media-exp1.licdn.com/dms/image/C4D12AQEoMfFf51D7KA/article-inline_image-shrink_1500_2232/0/1651434831833?e=2147483647&amp;v=beta&amp;t=nVkWExjDJIFwB5wqtEodFBonDLHT0MMBY4DSCaoxFuI"
+        data-srcset="https://media-exp1.licdn.com/dms/image/C4D12AQEoMfFf51D7KA/article-inline_image-shrink_1500_2232/0/1651434831833?e=2147483647&amp;v=beta&amp;t=nVkWExjDJIFwB5wqtEodFBonDLHT0MMBY4DSCaoxFuI, https://media-exp1.licdn.com/dms/image/C4D12AQEoMfFf51D7KA/article-inline_image-shrink_1500_2232/0/1651434831833?e=2147483647&amp;v=beta&amp;t=nVkWExjDJIFwB5wqtEodFBonDLHT0MMBY4DSCaoxFuI 1.5x, https://media-exp1.licdn.com/dms/image/C4D12AQEoMfFf51D7KA/article-inline_image-shrink_1500_2232/0/1651434831833?e=2147483647&amp;v=beta&amp;t=nVkWExjDJIFwB5wqtEodFBonDLHT0MMBY4DSCaoxFuI 2x"
+        data-sizes="auto"
+        alt="https://media-exp1.licdn.com/dms/image/C4D12AQEoMfFf51D7KA/article-inline_image-shrink_1500_2232/0/1651434831833?e=2147483647&amp;v=beta&amp;t=nVkWExjDJIFwB5wqtEodFBonDLHT0MMBY4DSCaoxFuI"
+        title="how" /></p>
+<p>Now, you have a tree that you can simply traverse to find a group of neighbors to your query point and get your results in Logarithmic complexity. You can make it even better by not relying on a single tree, but a whole forest of trees to make the splits. Just keep in mind that these trees are stored in memory, and for big datasets, it is usually very heavy, and the complexity would increase you now have to traverse multiple trees to make your query.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://media-exp1.licdn.com/dms/image/C4D12AQHDNxPaOVnV1g/article-inline_image-shrink_1000_1488/0/1651434672506?e=2147483647&amp;v=beta&amp;t=HPmSo3fVQBnQ1__5bpHBkBw4gwMUh6WWad6ayiIfOS0"
+        data-srcset="https://media-exp1.licdn.com/dms/image/C4D12AQHDNxPaOVnV1g/article-inline_image-shrink_1000_1488/0/1651434672506?e=2147483647&amp;v=beta&amp;t=HPmSo3fVQBnQ1__5bpHBkBw4gwMUh6WWad6ayiIfOS0, https://media-exp1.licdn.com/dms/image/C4D12AQHDNxPaOVnV1g/article-inline_image-shrink_1000_1488/0/1651434672506?e=2147483647&amp;v=beta&amp;t=HPmSo3fVQBnQ1__5bpHBkBw4gwMUh6WWad6ayiIfOS0 1.5x, https://media-exp1.licdn.com/dms/image/C4D12AQHDNxPaOVnV1g/article-inline_image-shrink_1000_1488/0/1651434672506?e=2147483647&amp;v=beta&amp;t=HPmSo3fVQBnQ1__5bpHBkBw4gwMUh6WWad6ayiIfOS0 2x"
+        data-sizes="auto"
+        alt="https://media-exp1.licdn.com/dms/image/C4D12AQHDNxPaOVnV1g/article-inline_image-shrink_1000_1488/0/1651434672506?e=2147483647&amp;v=beta&amp;t=HPmSo3fVQBnQ1__5bpHBkBw4gwMUh6WWad6ayiIfOS0"
+        title="GIF" /></p>
+<p>and here is what it looks like at making your queries after you have built your forest</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://media-exp1.licdn.com/dms/image/C4D12AQEQfUSZiE728A/article-inline_image-shrink_1000_1488/0/1651435204463?e=2147483647&amp;v=beta&amp;t=uJyDu7sCqalE_wTlaptaBJMlODK_CzFwPwuoBKZNyFs"
+        data-srcset="https://media-exp1.licdn.com/dms/image/C4D12AQEQfUSZiE728A/article-inline_image-shrink_1000_1488/0/1651435204463?e=2147483647&amp;v=beta&amp;t=uJyDu7sCqalE_wTlaptaBJMlODK_CzFwPwuoBKZNyFs, https://media-exp1.licdn.com/dms/image/C4D12AQEQfUSZiE728A/article-inline_image-shrink_1000_1488/0/1651435204463?e=2147483647&amp;v=beta&amp;t=uJyDu7sCqalE_wTlaptaBJMlODK_CzFwPwuoBKZNyFs 1.5x, https://media-exp1.licdn.com/dms/image/C4D12AQEQfUSZiE728A/article-inline_image-shrink_1000_1488/0/1651435204463?e=2147483647&amp;v=beta&amp;t=uJyDu7sCqalE_wTlaptaBJMlODK_CzFwPwuoBKZNyFs 2x"
+        data-sizes="auto"
+        alt="https://media-exp1.licdn.com/dms/image/C4D12AQEQfUSZiE728A/article-inline_image-shrink_1000_1488/0/1651435204463?e=2147483647&amp;v=beta&amp;t=uJyDu7sCqalE_wTlaptaBJMlODK_CzFwPwuoBKZNyFs"
+        title="final" /></p>
+<p>Now you can simply run your distance function on comparison on the few nodes that the tree traversal led to, which makes this system scalable while providing good results.</p>
+<h2 id="sources">Sources</h2>
+<p>source of the amazing images used in this article: <a href="https://erikbern.com/2015/10/01/nearest-neighbors-and-vector-models-part-2-how-to-search-in-high-dimensional-spaces.html" target="_blank" rel="noopener noreffer">link</a></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-05-02</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/datascience/">datascience</a>,&nbsp;<a href="/tags/knn/">KNN</a>,&nbsp;<a href="/tags/ann/">ANN</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/first_post/" class="prev" rel="prev" title="Shenawy wa7ed bas"><i class="fas fa-angle-left fa-fw"></i>Shenawy wa7ed bas</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.68.3">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

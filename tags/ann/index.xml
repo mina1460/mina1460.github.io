@@ -1,9 +1,9 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>All Posts - Mina Ashraf&#39;s Blog</title>
-        <link>http://minaashraf.me/posts/</link>
-        <description>All Posts | Mina Ashraf&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 02 May 2022 17:05:48 &#43;0200</lastBuildDate><atom:link href="http://minaashraf.me/posts/" rel="self" type="application/rss+xml" /><item>
+        <title>ANN - Tag - Mina Ashraf&#39;s Blog</title>
+        <link>http://minaashraf.me/tags/ann/</link>
+        <description>ANN - Tag - Mina Ashraf&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 02 May 2022 17:05:48 &#43;0200</lastBuildDate><atom:link href="http://minaashraf.me/tags/ann/" rel="self" type="application/rss+xml" /><item>
     <title>Approximate_nearest_neighbor</title>
     <link>http://minaashraf.me/posts/approximate_nearest_neighbor/</link>
     <pubDate>Mon, 02 May 2022 17:05:48 &#43;0200</pubDate>
@@ -11,14 +11,6 @@
     <guid>http://minaashraf.me/posts/approximate_nearest_neighbor/</guid>
     <description><![CDATA[Approximate Nearest Neighbors problem with KNNs Finding the nearest neighbors in your data can be a very useful exercise in hundreds of applications. You will always find KNN models making their way into your solution in one way or another. They are used in recommendation engines, anomaly detection, classification of semantically similar documents, etc, but they have a serious problem, which is scalability.
 KNN models are lazy non-parametric models, which means that when you do the famous model.]]></description>
-</item>
-<item>
-    <title>Shenawy wa7ed bas</title>
-    <link>http://minaashraf.me/posts/first_post/</link>
-    <pubDate>Sun, 17 Apr 2022 12:45:41 &#43;0200</pubDate>
-    <author>Author</author>
-    <guid>http://minaashraf.me/posts/first_post/</guid>
-    <description><![CDATA[Thank you Shenawy ]]></description>
 </item>
 </channel>
 </rss>
