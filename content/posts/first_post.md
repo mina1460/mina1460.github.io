@@ -1,18 +1,9 @@
 ---
-title: "First Post"
+title: "Shenawy wa7ed bas"
 date: 2022-04-17T12:45:41+02:00
-tags: [ayman, acm]
+tags: [shenawy, regola]
 ---
 
+# Thank you Shenawy 
+![img](resources/shenawy.jpg)
 
-
-## Zeby 
-fen el klam fen el e7sas
-
-```$ kosomak ```
-
-### command
-``` $ kosabok -nek ```  
-
-#### command2
-``` $ kosabok -nek ```  
