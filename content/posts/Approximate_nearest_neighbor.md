@@ -1,5 +1,5 @@
 ---
-title: "Approximate_nearest_neighbor"
+title: "Approximate nearest neighbor"
 date: 2022-05-02T17:05:48+02:00
 tags: [datascience, KNN, ANN]
 ---
@@ -46,3 +46,5 @@ Now you can simply run your distance function on comparison on the few nodes tha
 
 ## Sources 
 source of the amazing images used in this article: [link](https://erikbern.com/2015/10/01/nearest-neighbors-and-vector-models-part-2-how-to-search-in-high-dimensional-spaces.html)
+
+{{< comments >}} 

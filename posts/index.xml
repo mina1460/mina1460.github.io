@@ -18,7 +18,8 @@ KNN models are lazy non-parametric models, which means that when you do the famo
     <pubDate>Sun, 17 Apr 2022 12:45:41 &#43;0200</pubDate>
     <author>Author</author>
     <guid>http://minaashraf.me/posts/first_post/</guid>
-    <description><![CDATA[Thank you Shenawy ]]></description>
+    <description><![CDATA[Thank you Shenawy {{template &lsquo;_internal/disqus.html&rsquo; .}}
+bye ]]></description>
 </item>
 </channel>
 </rss>
