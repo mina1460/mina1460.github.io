@@ -1,0 +1,18 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>ayman - Tag - Mina Ashraf&#39;s Blog</title>
+        <link>http://minaashraf.me/tags/ayman/</link>
+        <description>ayman - Tag - Mina Ashraf&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 17 Apr 2022 12:45:41 &#43;0200</lastBuildDate><atom:link href="http://minaashraf.me/tags/ayman/" rel="self" type="application/rss+xml" /><item>
+    <title>First Post</title>
+    <link>http://minaashraf.me/posts/first_post/</link>
+    <pubDate>Sun, 17 Apr 2022 12:45:41 &#43;0200</pubDate>
+    <author>Author</author>
+    <guid>http://minaashraf.me/posts/first_post/</guid>
+    <description><![CDATA[Zeby fen el klam fen el e7sas
+$ kosomak 
+command $ kosabok -nek
+command2 $ kosabok -nek]]></description>
+</item>
+</channel>
+</rss>

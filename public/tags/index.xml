@@ -1,0 +1,23 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Tags - Tag - Mina Ashraf&#39;s Blog</title>
+        <link>http://minaashraf.me/tags/</link>
+        <description>Tags - Tag - Mina Ashraf&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 17 Apr 2022 12:45:41 &#43;0200</lastBuildDate><atom:link href="http://minaashraf.me/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>acm</title>
+    <link>http://minaashraf.me/tags/acm/</link>
+    <pubDate>Sun, 17 Apr 2022 12:45:41 &#43;0200</pubDate>
+    <author>Author</author>
+    <guid>http://minaashraf.me/tags/acm/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>ayman</title>
+    <link>http://minaashraf.me/tags/ayman/</link>
+    <pubDate>Sun, 17 Apr 2022 12:45:41 &#43;0200</pubDate>
+    <author>Author</author>
+    <guid>http://minaashraf.me/tags/ayman/</guid>
+    <description><![CDATA[]]></description>
+</item>
+</channel>
+</rss>
