@@ -9,8 +9,7 @@
     <pubDate>Sun, 17 Apr 2022 12:45:41 &#43;0200</pubDate>
     <author>Author</author>
     <guid>http://minaashraf.me/posts/first_post/</guid>
-    <description><![CDATA[Thank you Shenawy {{template &lsquo;_internal/disqus.html&rsquo; .}}
-bye ]]></description>
+    <description><![CDATA[Thank you Shenawy (function() { var d = document, s = d.createElement('script');s.src = 'https://minaashraf-me-1.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();Please enable JavaScript to view the comments powered by Disqus. ]]></description>
 </item>
 </channel>
 </rss>
